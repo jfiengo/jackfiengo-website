@@ -1,0 +1,21 @@
+/*
+CONTAINER & BACKGROUND
+Main container and background effects.
+*/
+.container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(32, 36, 60, 0.95) 100%);
+}
+
+.container.home {
+  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(32, 36, 60, 0.95) 100%);
+}
+
+.container.about {
+  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(41, 42, 77, 0.95) 100%);
+}
+
+.container.work {
+  background: linear-gradient(150deg, rgba(18, 21, 32, 0.97) 0%, rgba(28, 34, 65, 0.95) 100%);
+}

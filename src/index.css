@@ -1,0 +1,85 @@
+/*
+VARIABLES
+Defining color variables for a sleek, modern theme.
+*/
+:root {
+  --primary-color: #4C6EF5;
+  --secondary-color: #748EF6;
+  --dark-color: #121520;
+  --light-color: #f8f9fa;
+  --accent-color: #9EB0FF;
+  --surface-color: rgba(18, 21, 32, 0.8);
+}
+
+/*
+GLOBAL STYLES
+Basic reset and global style definitions.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  overflow-x: hidden;
+}
+
+/* Animation keyframes */
+@keyframes grid-animation {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(40px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 10%;
+    left: 10%;
+  }
+  25% {
+    top: 80%;
+    left: 25%;
+  }
+  50% {
+    top: 30%;
+    left: 70%;
+  }
+  75% {
+    top: 70%;
+    left: 85%;
+  }
+  100% {
+    top: 20%;
+    left: 55%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

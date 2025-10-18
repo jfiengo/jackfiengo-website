@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title | Jack Fiengo</title>
+    <style>
+        /* 
+        VARIABLES
+        Using the same color scheme as index for consistency
+        */
+        :root {
+            --primary-color: #4C6EF5;
+            --secondary-color: #748EF6;
+            --dark-color: #121520;
+            --light-color: #f8f9fa;
+            --accent-color: #9EB0FF;
+            --surface-color: rgba(18, 21, 32, 0.8);
+        }
+        
+        /* 
+        GLOBAL STYLES
+        Basic reset and global style definitions.
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        /* 
+        CONTAINER & BACKGROUND
+        Main container with yet another gradient variation
+        */
+        .container {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(120deg, rgba(18, 21, 32, 0.97) 0%, rgba(26, 31, 58, 0.95) 100%);
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        /* 
+        GRID BACKGROUND
+        */
+        .grid {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: 
+                linear-gradient(rgba(76, 110, 245, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 110, 245, 0.03) 1px, transparent 1px);
+            background-size: 35px 35px;
+            transform: perspective(500px) rotateX(65deg);
+            animation: grid-animation 35s linear infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes grid-animation {
+            0% {
+                transform: perspective(500px) rotateX(65deg) translateY(0);
+            }
+            100% {
+                transform: perspective(500px) rotateX(65deg) translateY(40px);
+            }
+        }
+        
+        /* 
+        NOISE TEXTURE
+        Creates a subtle noise texture overlay.
+        */
+        .noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        /* 
+        HEADER STYLES 
+        Navigation and page title
+        */
+        header {
+            padding: 25px 40px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 5px;
+            color: var(--light-color);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-link {
+            color: var(--light-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* 
+        MAIN CONTENT STYLES
+        Project detail content area
+        */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 40px 100px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* 
+        PROJECT HEADER
+        Top section with title and metadata
+        */
+        .project-header {
+            margin-bottom: 60px;
+        }
+        
+        .project-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            max-width: 800px;
+        }
+        
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        
+        .meta-value {
+            font-size: 1rem;
+            color: var(--light-color);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .project-tag {
+            padding: 6px 12px;
+            background: rgba(76, 110, 245, 0.1);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+        
+        /* 
+        HERO IMAGE
+        Main project showcase image
+        */
+        .project-hero {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(76, 110, 245, 0.1);
+        }
+        
+        /* 
+        PROJECT CONTENT
+        Main text and sections of the project
+        */
+        .project-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--light-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .project-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(248, 249, 250, 0.9);
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+        
+        /* 
+        PROJECT GALLERY
+        Additional project images
+        */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76, 110, 245, 0.1);
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(76, 110, 245, 0.3);
+        }
+        
+        /* 
+        NAVIGATION BUTTONS
+        Prev/next project and back to work
+        */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            border-top: 1px solid rgba(76, 110, 245, 0.1);
+            padding-top: 30px;
+        }
+        
+        .nav-button {
+            padding: 12px 25px;
+            background: rgba(18, 21, 32, 0.3);
+            color: var(--light-color);
+            border: 1px solid rgba(76, 110, 245, 0.3);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-button:hover {
+            background: rgba(76, 110, 245, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* 
+        RESPONSIVE STYLES
+        Adjustments for smaller screens
+        */
+        @media (max-width: 900px) {
+            .project-gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .project-hero {
+                height: auto;
+            }
+            
+            .project-nav {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background visual effects section -->
+        <div class="background">
+            <!-- Grid effect creates depth/perspective -->
+            <div class="grid"></div>
+            
+            <!-- Noise texture adds subtle grain -->
+            <div class="noise"></div>
+        </div>
+        
+        <!-- Header with navigation -->
+        <header>
+            <a href="../index.html" class="logo">Jack Fiengo</a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../work.html" class="nav-link">Work</a>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="mailto:jackfiengo@proton.me" class="nav-link">Contact</a>
+            </div>
+        </header>
+        
+        <!-- Main content area -->
+        <div class="content">
+            <!-- Project header with title and metadata -->
+            <div class="project-header">
+                <h1 class="project-title">Project Title</h1>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">Month Year</span>
+                    </div>
+                    
+                    <div class="meta-item">
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">Client Name</span>
+                    </div>
+                    
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Your Role</span>
+                    </div>
+                </div>
+                
+                <div class="project-tags">
+                    <span class="project-tag">Tag 1</span>
+                    <span class="project-tag">Tag 2</span>
+                    <span class="project-tag">Tag 3</span>
+                </div>
+            </div>
+            
+            <!-- Main project image -->
+            <img src="../images/project-hero.jpg" alt="Project Hero Image" class="project-hero">
+            
+            <!-- Project overview section -->
+            <div class="project-section">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="project-text">
+                    Add your project overview text here.
+                </p>
+            </div>
+            
+            <!-- Challenge section -->
+            <div class="project-section">
+                <h2 class="section-title">The Challenge</h2>
+                <p class="project-text">
+                    Add your challenge description here.
+                </p>
+            </div>
+            
+            <!-- Project gallery section -->
+            <div class="project-gallery">
+                <!-- Add your project images here -->
+            </div>
+            
+            <!-- Solution section -->
+            <div class="project-section">
+                <h2 class="section-title">The Solution</h2>
+                <p class="project-text">
+                    Add your solution description here.
+                </p>
+            </div>
+            
+            <!-- Results section -->
+            <div class="project-section">
+                <h2 class="section-title">Results</h2>
+                <p class="project-text">
+                    Add your results and impact here.
+                </p>
+            </div>
+            
+            <!-- Project navigation -->
+            <div class="project-nav">
+                <a href="../work.html" class="nav-button">← Back to Projects</a>
+                <a href="next-project.html" class="nav-button">Next Project →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
