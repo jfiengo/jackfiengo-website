@@ -13,6 +13,10 @@ crash.*.log
 *.tfvars
 *.tfvars.json
 
+# But include these specific non-sensitive config files
+!backend/backend.tfvars
+!environment/terraform.tfvars
+
 # Ignore override files
 override.tf
 override.tf.json
