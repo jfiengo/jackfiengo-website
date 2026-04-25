@@ -6,7 +6,7 @@ export default function About() {
   return (
     <Layout backgroundVariant="about">
       <div className="content">
-        <h1 className="page-title">ABOUT ME</h1>
+        <h1 className="page-title">About Jack</h1>
 
         <div className="about-section">
           <div className="bio">
@@ -16,7 +16,7 @@ export default function About() {
             </p>
 
             <p>
-              My approach combines strategic thinking with execution, helping businesses achieve their goals through techincal strategy, design, and development.
+              My approach combines strategic thinking with execution, helping businesses achieve their goals through technical strategy, design, and development.
             </p>
 
             <h2>My Expertise</h2>

@@ -1,21 +1,30 @@
-/*
-CONTAINER & BACKGROUND
-Main container and background effects.
-*/
 .container {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(32, 36, 60, 0.95) 100%);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(76, 110, 245, 0.2), transparent 34rem),
+    radial-gradient(circle at 82% 12%, rgba(158, 176, 255, 0.12), transparent 30rem),
+    linear-gradient(145deg, #090d19 0%, #11182d 48%, #080b15 100%);
 }
 
 .container.home {
-  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(32, 36, 60, 0.95) 100%);
+  background:
+    radial-gradient(circle at 52% 24%, rgba(116, 142, 246, 0.24), transparent 28rem),
+    radial-gradient(circle at 12% 86%, rgba(76, 110, 245, 0.18), transparent 30rem),
+    linear-gradient(150deg, #070b16 0%, #10172a 52%, #090d18 100%);
 }
 
 .container.about {
-  background: linear-gradient(135deg, rgba(18, 21, 32, 0.97) 0%, rgba(41, 42, 77, 0.95) 100%);
+  background:
+    radial-gradient(circle at 22% 22%, rgba(158, 176, 255, 0.16), transparent 30rem),
+    radial-gradient(circle at 86% 72%, rgba(76, 110, 245, 0.16), transparent 34rem),
+    linear-gradient(145deg, #090d19 0%, #13172f 52%, #080b15 100%);
 }
 
 .container.work {
-  background: linear-gradient(150deg, rgba(18, 21, 32, 0.97) 0%, rgba(28, 34, 65, 0.95) 100%);
+  background:
+    radial-gradient(circle at 76% 18%, rgba(76, 110, 245, 0.18), transparent 32rem),
+    radial-gradient(circle at 12% 78%, rgba(158, 176, 255, 0.12), transparent 32rem),
+    linear-gradient(155deg, #090d18 0%, #111a33 48%, #070b15 100%);
 }

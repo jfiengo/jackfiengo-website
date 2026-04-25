@@ -5,8 +5,8 @@ export default function Work() {
   return (
     <Layout backgroundVariant="work">
       <div className="content">
-        <h1 className="page-title">MY WORK</h1>
-        <p className="page-subtitle">Explore my portfolio of projects. Each piece represents a unique challenge and solution, showcasing my approach to design and development.</p>
+        <h1 className="page-title">Selected Work</h1>
+        <p className="page-subtitle">A focused look at projects where I combine product thinking, engineering execution, and emerging technology to solve practical problems.</p>
 
         <div className="project-grid">
           {/* Shopify Structured Data Project */}
