@@ -1,27 +1,12 @@
 import './Background.css';
 
-export default function Background({ includeBouncingBall = false, includeCircles = false }) {
+export default function Background({ variant = 'default' }) {
   return (
-    <div className="background">
-      {includeBouncingBall && <div className="bouncing-ball"></div>}
-
+    <div className={`background background-${variant}`}>
+      <div className="ambient-orb orb-one"></div>
+      <div className="ambient-orb orb-two"></div>
+      <div className="ambient-orb orb-three"></div>
       <div className="grid"></div>
-
-      {includeCircles && (
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      )}
-
       <div className="noise"></div>
     </div>
   );

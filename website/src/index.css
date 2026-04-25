@@ -1,31 +1,52 @@
-/*
-VARIABLES
-Defining color variables for a sleek, modern theme.
-*/
 :root {
-  --primary-color: #4C6EF5;
-  --secondary-color: #748EF6;
-  --dark-color: #121520;
+  --primary-color: #4c6ef5;
+  --secondary-color: #748ef6;
+  --dark-color: #0b1020;
   --light-color: #f8f9fa;
-  --accent-color: #9EB0FF;
-  --surface-color: rgba(18, 21, 32, 0.8);
+  --accent-color: #9eb0ff;
+  --text-muted: rgba(248, 249, 250, 0.72);
+  --text-soft: rgba(248, 249, 250, 0.54);
+  --surface-color: rgba(13, 18, 33, 0.72);
+  --surface-elevated: rgba(255, 255, 255, 0.07);
+  --surface-subtle: rgba(255, 255, 255, 0.035);
+  --border-color: rgba(158, 176, 255, 0.18);
+  --border-strong: rgba(158, 176, 255, 0.34);
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.32);
+  --shadow-glow: 0 24px 70px rgba(76, 110, 245, 0.2);
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 34px;
+  --max-content-width: 1180px;
 }
 
-/*
-GLOBAL STYLES
-Basic reset and global style definitions.
-*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--dark-color);
 }
 
 body {
   background-color: var(--dark-color);
   color: var(--light-color);
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(158, 176, 255, 0.28);
+  color: var(--light-color);
 }
 
 /* Animation keyframes */
@@ -40,12 +61,10 @@ body {
 
 @keyframes float {
   0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
   100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
+    transform: translate3d(24px, -34px, 0) scale(1.05);
   }
 }
 
@@ -81,5 +100,15 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes orb-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(28px, -22px, 0) scale(1.08);
   }
 }

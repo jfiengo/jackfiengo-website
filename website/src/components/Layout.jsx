@@ -6,9 +6,9 @@ export default function Layout({ children, showHeader = true, backgroundVariant 
   const getBackgroundProps = () => {
     switch (backgroundVariant) {
       case 'home':
-        return { includeBouncingBall: true, includeCircles: true };
+        return { variant: 'home' };
       default:
-        return { includeBouncingBall: false, includeCircles: false };
+        return { variant: backgroundVariant };
     }
   };
 
