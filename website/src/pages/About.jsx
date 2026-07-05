@@ -12,7 +12,7 @@ export default function About() {
           <div className="bio">
             <h2>Who I Am</h2>
             <p>
-              I'm Jack Fiengo, a current software engineer with end-to-end experience passionate about researching and integrating emerging technologies. My work has primarily focused on helping transform the healthcare space, but I'm eager for opportunities to leverage innovation for broader societal impact.
+              I'm Jack Fiengo, a current AI engineer with end-to-end experience passionate about researching and integrating emerging technologies. My work has primarily focused on helping transform the healthcare space, but I'm eager for opportunities to leverage innovation for broader societal impact.
             </p>
 
             <p>

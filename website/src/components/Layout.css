@@ -3,28 +3,28 @@
   min-height: 100vh;
   isolation: isolate;
   background:
-    radial-gradient(circle at 16% 18%, rgba(76, 110, 245, 0.2), transparent 34rem),
-    radial-gradient(circle at 82% 12%, rgba(158, 176, 255, 0.12), transparent 30rem),
-    linear-gradient(145deg, #090d19 0%, #11182d 48%, #080b15 100%);
+    radial-gradient(circle at 16% 18%, rgba(107, 83, 68, 0.04), transparent 34rem),
+    radial-gradient(circle at 82% 12%, rgba(180, 80, 70, 0.03), transparent 30rem),
+    linear-gradient(145deg, var(--paper-color) 0%, #F3EEE4 48%, var(--paper-color) 100%);
 }
 
 .container.home {
   background:
-    radial-gradient(circle at 52% 24%, rgba(116, 142, 246, 0.24), transparent 28rem),
-    radial-gradient(circle at 12% 86%, rgba(76, 110, 245, 0.18), transparent 30rem),
-    linear-gradient(150deg, #070b16 0%, #10172a 52%, #090d18 100%);
+    radial-gradient(circle at 52% 24%, rgba(107, 83, 68, 0.05), transparent 28rem),
+    radial-gradient(circle at 12% 86%, rgba(180, 80, 70, 0.03), transparent 30rem),
+    linear-gradient(150deg, #FAF6EF 0%, var(--paper-color) 52%, #F2EBE0 100%);
 }
 
 .container.about {
   background:
-    radial-gradient(circle at 22% 22%, rgba(158, 176, 255, 0.16), transparent 30rem),
-    radial-gradient(circle at 86% 72%, rgba(76, 110, 245, 0.16), transparent 34rem),
-    linear-gradient(145deg, #090d19 0%, #13172f 52%, #080b15 100%);
+    radial-gradient(circle at 22% 22%, rgba(107, 83, 68, 0.04), transparent 30rem),
+    radial-gradient(circle at 86% 72%, rgba(180, 80, 70, 0.03), transparent 34rem),
+    linear-gradient(145deg, var(--paper-color) 0%, #F5F0E6 52%, #F0EAE0 100%);
 }
 
 .container.work {
   background:
-    radial-gradient(circle at 76% 18%, rgba(76, 110, 245, 0.18), transparent 32rem),
-    radial-gradient(circle at 12% 78%, rgba(158, 176, 255, 0.12), transparent 32rem),
-    linear-gradient(155deg, #090d18 0%, #111a33 48%, #070b15 100%);
+    radial-gradient(circle at 76% 18%, rgba(107, 83, 68, 0.04), transparent 32rem),
+    radial-gradient(circle at 12% 78%, rgba(180, 80, 70, 0.03), transparent 32rem),
+    linear-gradient(155deg, #F8F4EC 0%, var(--paper-color) 48%, #F1EBE2 100%);
 }

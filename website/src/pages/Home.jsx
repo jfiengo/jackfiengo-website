@@ -7,9 +7,9 @@ export default function Home() {
     <Layout showHeader={false} backgroundVariant="home">
       <div className="content home-content">
         <div className="hero-shell">
-          <p className="hero-eyebrow">Software engineer · product thinker · systems builder</p>
+          <p className="hero-eyebrow">AI engineer · product thinker · systems builder</p>
 
-          <h1 className="glitch">
+          <h1 className="hero-title">
             Jack Fiengo
           </h1>
 
