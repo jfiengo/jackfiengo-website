@@ -17,6 +17,8 @@
   --max-content-width: 1180px;
   --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --shadow-paper-stack: 0 2px 0 rgba(42, 38, 34, 0.04), 0 8px 24px rgba(42, 38, 34, 0.06), 0 24px 48px rgba(42, 38, 34, 0.08);
 }
 
 * {

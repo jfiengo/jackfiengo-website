@@ -10,6 +10,7 @@
 
 .container.home {
   background:
+    radial-gradient(ellipse at 50% 40%, rgba(253, 251, 247, 0.9), transparent 55%),
     radial-gradient(circle at 52% 24%, rgba(107, 83, 68, 0.05), transparent 28rem),
     radial-gradient(circle at 12% 86%, rgba(180, 80, 70, 0.03), transparent 30rem),
     linear-gradient(150deg, #FAF6EF 0%, var(--paper-color) 52%, #F2EBE0 100%);
