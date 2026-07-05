@@ -1,22 +1,24 @@
 :root {
-  --primary-color: #4c6ef5;
-  --secondary-color: #748ef6;
-  --dark-color: #0b1020;
-  --light-color: #f8f9fa;
-  --accent-color: #9eb0ff;
-  --text-muted: rgba(248, 249, 250, 0.72);
-  --text-soft: rgba(248, 249, 250, 0.54);
-  --surface-color: rgba(13, 18, 33, 0.72);
-  --surface-elevated: rgba(255, 255, 255, 0.07);
-  --surface-subtle: rgba(255, 255, 255, 0.035);
-  --border-color: rgba(158, 176, 255, 0.18);
-  --border-strong: rgba(158, 176, 255, 0.34);
-  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.32);
-  --shadow-glow: 0 24px 70px rgba(76, 110, 245, 0.2);
-  --radius-sm: 14px;
-  --radius-md: 22px;
-  --radius-lg: 34px;
+  --paper-color: #F7F3EC;
+  --paper-elevated: #FDFBF7;
+  --ink-color: #2A2622;
+  --ink-muted: #5C564E;
+  --ink-soft: #8A8378;
+  --accent-color: #6B5344;
+  --accent-strong: #4A3828;
+  --rule-color: rgba(107, 83, 68, 0.12);
+  --margin-color: rgba(180, 80, 70, 0.18);
+  --border-color: rgba(42, 38, 34, 0.12);
+  --border-strong: rgba(42, 38, 34, 0.22);
+  --shadow-soft: 0 8px 32px rgba(42, 38, 34, 0.08);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --max-content-width: 1180px;
+  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --shadow-paper-stack: 0 2px 0 rgba(42, 38, 34, 0.04), 0 8px 24px rgba(42, 38, 34, 0.06), 0 24px 48px rgba(42, 38, 34, 0.08);
 }
 
 * {
@@ -27,14 +29,14 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--dark-color);
+  background: var(--paper-color);
 }
 
 body {
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  background-color: var(--paper-color);
+  color: var(--ink-color);
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   font-feature-settings: "kern";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,70 +47,6 @@ a {
 }
 
 ::selection {
-  background: rgba(158, 176, 255, 0.28);
-  color: var(--light-color);
-}
-
-/* Animation keyframes */
-@keyframes grid-animation {
-  0% {
-    transform: perspective(500px) rotateX(60deg) translateY(0);
-  }
-  100% {
-    transform: perspective(500px) rotateX(60deg) translateY(40px);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  100% {
-    transform: translate3d(24px, -34px, 0) scale(1.05);
-  }
-}
-
-@keyframes bounce {
-  0% {
-    top: 10%;
-    left: 10%;
-  }
-  25% {
-    top: 80%;
-    left: 25%;
-  }
-  50% {
-    top: 30%;
-    left: 70%;
-  }
-  75% {
-    top: 70%;
-    left: 85%;
-  }
-  100% {
-    top: 20%;
-    left: 55%;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes orb-drift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate3d(28px, -22px, 0) scale(1.08);
-  }
+  background: rgba(107, 83, 68, 0.22);
+  color: var(--ink-color);
 }

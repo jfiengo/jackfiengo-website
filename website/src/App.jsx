@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
 import './App.css';
+import './styles/shared.css';
 
 function App() {
   return (
