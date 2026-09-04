@@ -1,75 +1,101 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import Plate from '../components/Plate';
 import './About.css';
+
+const expertise = [
+  'AI strategy & adoption',
+  'Agent harnesses',
+  'Long-running agentic systems',
+  'Cloud architecture',
+  'Backend engineering',
+  'Product vision',
+];
+
+const plates = [
+  { src: '/images/ProfilePicture.jpg', alt: 'Jack hiking in a mountain valley in Colorado', numeral: 'II', caption: 'Vail, Colorado' },
+  { src: '/images/AnnecyLake.jpg', alt: 'Lake Annecy in France', numeral: 'III', caption: "Lac d'Annecy, Haute-Savoie" },
+  { src: '/images/ChamonixMountains.jpg', alt: 'Mountains above Chamonix', numeral: 'IV', caption: 'Chamonix, Mont Blanc massif' },
+  { src: '/images/SwissCows.jpg', alt: 'Cows in an alpine pasture in Switzerland', numeral: 'V', caption: 'Alpine pasture, Switzerland' },
+];
 
 export default function About() {
   return (
-    <Layout backgroundVariant="about">
-      <div className="content">
-        <h1 className="page-title">About Jack</h1>
+    <Layout>
+      <main className="content about">
+        <header className="about-head">
+          <p className="folio">Biographical note</p>
+          <h1 className="page-title">About</h1>
+          <p className="page-dek">An engineer's short account of himself.</p>
+        </header>
 
-        <div className="about-section">
-          <div className="bio">
-            <h2>Who I Am</h2>
+        <hr className="rule rule--oxford" />
+
+        <div className="about-grid">
+          <article className="essay">
+            <p className="essay-lead">
+              I am an AI engineer with end-to-end experience, from research and product vision through
+              to the infrastructure that keeps a system running in production. Much of my work has been
+              in healthcare, where the cost of getting it wrong is high and the reward for getting it
+              right is measured in people, not dashboards.
+            </p>
+
+            <blockquote className="pull-quote">
+              The interesting problems are no longer whether a model can do the work, but whether a
+              system can be trusted to keep doing it.
+            </blockquote>
+
             <p>
-              I'm Jack Fiengo, a current AI engineer with end-to-end experience passionate about researching and integrating emerging technologies. My work has primarily focused on helping transform the healthcare space, but I'm eager for opportunities to leverage innovation for broader societal impact.
+              Today my practice sits at the intersection of strategy and systems. I help enterprises
+              decide where AI belongs and how to adopt it without theatre; I build agent harnesses,
+              the tools, memory, evaluation, and guardrails that turn a model into a dependable
+              colleague; and I design long-running agentic systems that work for hours or days,
+              with durable state, recovery, and humans in the loop where it counts.
             </p>
 
             <p>
-              My approach combines strategic thinking with execution, helping businesses achieve their goals through technical strategy, design, and development.
+              Away from the keyboard I am usually in the mountains. I read widely in politics,
+              economics, and the hard sciences, and I am always looking for the next thing worth
+              understanding properly.
             </p>
 
-            <h2>My Expertise</h2>
-            <ul>
-              <li>Product Vision</li>
-              <li>Backend Development</li>
-              <li>Brand Strategy</li>
-              <li>Cloud Hosted Solutions</li>
-              <li>Artificial Intelligence</li>
-            </ul>
+            <section className="expertise" aria-labelledby="expertise-heading">
+              <h2 id="expertise-heading" className="expertise-heading small-caps">Expertise</h2>
+              <ul className="expertise-list">
+                {expertise.map((item, index) => (
+                  <li key={item} className="expertise-item">
+                    <span className="expertise-index folio">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="expertise-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-            <p>
-              When I'm not designing or coding, you can find me exploring new technologies, enjoying the outdoors, or researching my other interests such as politics, economics, and hard sciences.
-            </p>
-
-            <Link to="/" className="button">Back to Home</Link>
-          </div>
-
-          <div className="gallery">
-            <div className="image-container">
-              <img src="/images/ProfilePicture.jpg" alt="Profile photo" />
-              <div className="image-overlay">
-                <h3 className="image-title">Professional</h3>
-                <p className="image-description">Hiking in Colorado</p>
-              </div>
+            <div className="essay-actions">
+              <Link to="/work" className="button primary">Selected works</Link>
+              <a href="mailto:jackfiengo@proton.me" className="link-rule">
+                Write to Jack<span className="arrow" aria-hidden="true">→</span>
+              </a>
             </div>
+          </article>
 
-            <div className="image-container">
-              <img src="/images/AnnecyLake.jpg" alt="Lake Annecy" />
-              <div className="image-overlay">
-                <h3 className="image-title">Lake Annecy</h3>
-                <p className="image-description">Lake Annecy</p>
-              </div>
+          <aside className="plates" aria-label="Plates">
+            <p className="plates-label folio">Plates</p>
+            <div className="plates-grid">
+              {plates.map((plate) => (
+                <Plate
+                  key={plate.numeral}
+                  src={plate.src}
+                  alt={plate.alt}
+                  ratio="4 / 3"
+                  colorOnHover
+                  caption={<><em>Plate {plate.numeral}</em> — {plate.caption}</>}
+                />
+              ))}
             </div>
-
-            <div className="image-container">
-              <img src="/images/ChamonixMountains.jpg" alt="Chamonix" />
-              <div className="image-overlay">
-                <h3 className="image-title">Chamonix</h3>
-                <p className="image-description">Chamonix</p>
-              </div>
-            </div>
-
-            <div className="image-container">
-              <img src="/images/SwissCows.jpg" alt="Swiss Cows" />
-              <div className="image-overlay">
-                <h3 className="image-title">Swiss Cows</h3>
-                <p className="image-description">Swiss Cows</p>
-              </div>
-            </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

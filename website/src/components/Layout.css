@@ -1,31 +1,14 @@
-.container {
+.page {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   isolation: isolate;
-  background:
-    radial-gradient(circle at 16% 18%, rgba(107, 83, 68, 0.04), transparent 34rem),
-    radial-gradient(circle at 82% 12%, rgba(180, 80, 70, 0.03), transparent 30rem),
-    linear-gradient(145deg, var(--paper-color) 0%, #F3EEE4 48%, var(--paper-color) 100%);
+  background: var(--paper);
 }
 
-.container.home {
-  background:
-    radial-gradient(ellipse at 50% 40%, rgba(253, 251, 247, 0.9), transparent 55%),
-    radial-gradient(circle at 52% 24%, rgba(107, 83, 68, 0.05), transparent 28rem),
-    radial-gradient(circle at 12% 86%, rgba(180, 80, 70, 0.03), transparent 30rem),
-    linear-gradient(150deg, #FAF6EF 0%, var(--paper-color) 52%, #F2EBE0 100%);
-}
-
-.container.about {
-  background:
-    radial-gradient(circle at 22% 22%, rgba(107, 83, 68, 0.04), transparent 30rem),
-    radial-gradient(circle at 86% 72%, rgba(180, 80, 70, 0.03), transparent 34rem),
-    linear-gradient(145deg, var(--paper-color) 0%, #F5F0E6 52%, #F0EAE0 100%);
-}
-
-.container.work {
-  background:
-    radial-gradient(circle at 76% 18%, rgba(107, 83, 68, 0.04), transparent 32rem),
-    radial-gradient(circle at 12% 78%, rgba(180, 80, 70, 0.03), transparent 32rem),
-    linear-gradient(155deg, #F8F4EC 0%, var(--paper-color) 48%, #F1EBE2 100%);
+.page > main,
+.page > .content {
+  flex: 1 0 auto;
 }

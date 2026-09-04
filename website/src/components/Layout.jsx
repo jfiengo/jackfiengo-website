@@ -1,22 +1,15 @@
 import Background from './Background';
-import Header from './Header';
+import Masthead from './Masthead';
+import Colophon from './Colophon';
 import './Layout.css';
 
-export default function Layout({ children, showHeader = true, backgroundVariant = 'default' }) {
-  const getBackgroundProps = () => {
-    switch (backgroundVariant) {
-      case 'home':
-        return { variant: 'home' };
-      default:
-        return { variant: backgroundVariant };
-    }
-  };
-
+export default function Layout({ children }) {
   return (
-    <div className={`container ${backgroundVariant}`}>
-      <Background {...getBackgroundProps()} />
-      {showHeader && <Header />}
+    <div className="page">
+      <Background />
+      <Masthead />
       {children}
+      <Colophon />
     </div>
   );
 }

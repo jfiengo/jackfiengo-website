@@ -1,0 +1,123 @@
+.masthead {
+  position: relative;
+  z-index: 20;
+  width: min(calc(100% - 2 * var(--gutter)), var(--max-content-width));
+  margin: 0 auto;
+  padding-top: 22px;
+}
+
+.masthead-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 0 12px;
+  border-top: 3px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  position: relative;
+}
+
+.masthead-inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2px;
+  height: 1px;
+  background: var(--rule-strong);
+}
+
+.masthead-name {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-variant-caps: all-small-caps;
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.masthead-name:hover {
+  color: var(--accent);
+}
+
+.masthead-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+}
+
+.masthead-link {
+  position: relative;
+  padding: 4px 0;
+  font-family: var(--font-display);
+  font-variant-caps: all-small-caps;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.masthead-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.masthead-link:hover,
+.masthead-link.active {
+  color: var(--ink);
+}
+
+.masthead-link:hover::after,
+.masthead-link.active::after {
+  transform: scaleX(1);
+}
+
+.masthead-folio {
+  justify-self: end;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .masthead-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .masthead-folio {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .masthead-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+
+  .masthead-nav {
+    gap: 14px;
+  }
+
+  .masthead-link {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead-link::after {
+    transition: none;
+  }
+}
