@@ -1,7 +1,59 @@
 export const projects = [
   {
-    id: 'shopify-structured-data',
+    id: 'voice-to-code',
     number: '01',
+    year: '2026',
+    title: 'Voice to Code',
+    hook: 'Live meeting transcription that launches cloud coding agents on a spoken command.',
+    description:
+      'A meeting companion that listens to a live call and turns spoken intent into work. Say “make an issue” or “make a PR” and the system launches a Cursor cloud agent that files the issue, plans against it, and opens a pull request. Transcripts come either from Google Meet captions read by a Chrome extension, or from a streamed microphone.',
+    tags: ['TypeScript', 'Next.js', 'Cursor SDK', 'Agents', 'Speech'],
+    features: [
+      'Keyword detection over a live meeting transcript',
+      'Cloud agents launched through the Cursor SDK',
+      'Issue creation and pull requests opened from spoken context',
+      'Pull requests planned from the associated GitHub issue',
+      'Two transcript sources: Meet captions or streamed microphone',
+      'GitHub OAuth so agents act with the user’s own permissions',
+    ],
+    stack: [
+      'Next.js and TypeScript',
+      'Cursor SDK for cloud agents',
+      'GitHub OAuth and the GitHub API',
+      'Chrome extension for Google Meet captions',
+      'Wispr Flow for microphone streaming',
+    ],
+    repo: 'https://github.com/Gsschenk12/voice-to-code-hackathon',
+  },
+  {
+    id: 'kb-toolkit',
+    number: '02',
+    year: '2026',
+    title: 'kb-toolkit',
+    hook: 'Scaffolding that turns any folder into a self-maintaining, LLM-compiled knowledge base.',
+    description:
+      'A toolkit built on the premise that Obsidian is the editor, the language model is the programmer, and the wiki is the codebase. A compile step sends an agent across the vault to summarise, link, and deduplicate notes. The design is deliberately private: the toolkit is public scaffolding holding zero notes, the vault is a separate local repository with no remote by default, and nothing phones home.',
+    tags: ['Python', 'MCP', 'Agents', 'Obsidian', 'Shell'],
+    features: [
+      'Compile loop that runs an agent across the vault on demand or on a schedule',
+      'Model Context Protocol server for use from Claude Desktop',
+      'Private by default: local-only vault, no remote, no telemetry',
+      'Contradictions flagged in callouts rather than silently overwritten',
+      'Git wrappers that commit the vault before and after each compile',
+      'Backfill pass that seeds a wiki from an existing set of notes',
+    ],
+    stack: [
+      'Python packaged with uv',
+      'Model Context Protocol server over stdio',
+      'Claude CLI as the compile agent',
+      'Shell scripts for setup, compile, and commit',
+      'Obsidian with optional semantic-search plugins',
+    ],
+    repo: 'https://github.com/jfiengo/kb-toolkit',
+  },
+  {
+    id: 'shopify-structured-data',
+    number: '03',
     year: '2025',
     title: 'Shopify Structured Data & AI Content Optimization',
     hook: 'AI-driven content optimisation and automated schema markup for e-commerce search visibility.',
@@ -25,7 +77,7 @@ export const projects = [
   },
   {
     id: 'replygenius',
-    number: '02',
+    number: '04',
     year: '2025',
     title: 'ReplyGenius',
     hook: 'Context-aware email replies for customer inquiries, built on retrieval-augmented generation and Claude.',
@@ -50,7 +102,7 @@ export const projects = [
   },
   {
     id: 'alzheimers-pipeline',
-    number: '03',
+    number: '05',
     year: '2025',
     title: "Alzheimer's Prediction Pipeline",
     hook: 'An automated machine-learning pipeline evaluated across a twenty-country dataset, served by API and containerised.',
