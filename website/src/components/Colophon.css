@@ -1,0 +1,74 @@
+.colophon {
+  position: relative;
+  z-index: 10;
+  width: min(calc(100% - 2 * var(--gutter)), var(--max-content-width));
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+
+.colophon-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-strong);
+  position: relative;
+}
+
+.colophon-inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3px;
+  height: 1px;
+  background: var(--rule);
+}
+
+.colophon-label {
+  margin-bottom: 12px;
+}
+
+.colophon-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.colophon-link,
+.colophon-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.colophon-link {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 0.4s var(--ease), color 0.25s ease;
+}
+
+.colophon-link:hover {
+  color: var(--accent);
+  background-size: 100% 1px;
+}
+
+.colophon-col--end {
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .colophon-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .colophon-col--end {
+    text-align: left;
+  }
+}

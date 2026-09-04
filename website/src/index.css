@@ -1,24 +1,19 @@
 :root {
-  --paper-color: #F7F3EC;
-  --paper-elevated: #FDFBF7;
-  --ink-color: #2A2622;
-  --ink-muted: #5C564E;
-  --ink-soft: #8A8378;
-  --accent-color: #6B5344;
-  --accent-strong: #4A3828;
-  --rule-color: rgba(107, 83, 68, 0.12);
-  --margin-color: rgba(180, 80, 70, 0.18);
-  --border-color: rgba(42, 38, 34, 0.12);
-  --border-strong: rgba(42, 38, 34, 0.22);
-  --shadow-soft: 0 8px 32px rgba(42, 38, 34, 0.08);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --paper: #F3EEE4;
+  --paper-deep: #EAE3D5;
+  --ink: #1B1916;
+  --ink-2: #4A453E;
+  --ink-3: #7D766B;
+  --accent: #2F4A3A;
+  --accent-deep: #22392C;
+  --rule: rgba(27, 25, 22, 0.18);
+  --rule-strong: rgba(27, 25, 22, 0.55);
   --max-content-width: 1180px;
-  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --gutter: clamp(20px, 4vw, 48px);
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
-  --shadow-paper-stack: 0 2px 0 rgba(42, 38, 34, 0.04), 0 8px 24px rgba(42, 38, 34, 0.06), 0 24px 48px rgba(42, 38, 34, 0.08);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -29,24 +24,41 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--paper-color);
+  background: var(--paper);
 }
 
 body {
-  background-color: var(--paper-color);
-  color: var(--ink-color);
+  background-color: var(--paper);
+  color: var(--ink);
   overflow-x: hidden;
   font-family: var(--font-body);
-  font-feature-settings: "kern";
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga", "onum";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
 }
 
 a {
   color: inherit;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 ::selection {
-  background: rgba(107, 83, 68, 0.22);
-  color: var(--ink-color);
+  background: rgba(47, 74, 58, 0.22);
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.02rem;
+  }
 }
