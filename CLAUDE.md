@@ -23,6 +23,7 @@ Repository structure:
   - `src/App.jsx` - Main application component
   - `src/index.css` - Global styles
   - `src/App.css` - Component-specific styles
+  - `src/posts/` - Blog posts as markdown, compiled at build time by `plugins/markdown.js` and served at `/writing/<slug>` (use the `blog-post` skill when adding one)
   - `public/` - Static assets served at root
   - `vite.config.js` - Vite configuration with React plugin
 - `terraform/` - AWS infrastructure as code (S3, CloudFront, Route53, ACM)
