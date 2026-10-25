@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { posts } from '../data/posts';
 import './Masthead.css';
 
 export default function Masthead() {
@@ -9,6 +10,7 @@ export default function Masthead() {
 
         <nav className="masthead-nav" aria-label="Primary">
           <NavLink to="/work" className="masthead-link">Work</NavLink>
+          {posts.length > 0 && <NavLink to="/writing" className="masthead-link">Writing</NavLink>}
           <NavLink to="/about" className="masthead-link">About</NavLink>
           <a href="mailto:jackfiengo@proton.me" className="masthead-link">Contact</a>
         </nav>

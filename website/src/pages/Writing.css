@@ -1,0 +1,90 @@
+.writing-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.writing-head .page-dek {
+  margin-top: 6px;
+}
+
+.writing-empty {
+  padding: clamp(40px, 6vw, 72px) 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--ink-3);
+}
+
+.writing-index {
+  list-style: none;
+}
+
+.writing-item {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(32px, 5vw, 52px) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.writing-item:last-child {
+  border-bottom: 0;
+}
+
+.writing-item-margin {
+  padding-top: 0.7em;
+}
+
+.writing-item-body {
+  min-width: 0;
+}
+
+.writing-item-title {
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 96, "SOFT" 20;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.writing-item-title a {
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.writing-item-title a:hover,
+.writing-item-title a:focus-visible {
+  color: var(--accent);
+}
+
+.writing-draft {
+  margin-left: 14px;
+  padding: 2px 8px;
+  border: 1px solid var(--rule-strong);
+  vertical-align: middle;
+}
+
+.writing-item-summary {
+  max-width: 62ch;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .writing-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .writing-item-margin {
+    padding-top: 0;
+  }
+}

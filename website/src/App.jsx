@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
+import Writing from './pages/Writing';
+import Post from './pages/Post';
 import './styles/shared.css';
 
 function ScrollManager() {
@@ -30,6 +32,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
+        <Route path="/writing" element={<Writing />} />
+        <Route path="/writing/:slug" element={<Post />} />
       </Routes>
     </Router>
   );
